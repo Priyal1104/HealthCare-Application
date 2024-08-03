@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".RegisterActivity">
+
+
+        <EditText
+            android:id="@+id/RegConfirmPassword"
+            android:layout_width="353dp"
+            android:layout_height="55dp"
+            android:background="@drawable/input_bg"
+            android:drawableLeft="@drawable/ic_baseline_security_24"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/RegPassword"
+            app:layout_constraintVertical_bias="0.08" />
+
+        <EditText
+            android:id="@+id/RegEmail"
+            android:layout_width="353dp"
+            android:layout_height="55dp"
+            android:background="@drawable/input_bg"
+            android:drawableLeft="@drawable/ic_baseline_email_24"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/RegUserName"
+            app:layout_constraintVertical_bias="0.055" />
+
+        <EditText
+            android:id="@+id/RegPassword"
+            android:layout_width="353dp"
+            android:layout_height="56dp"
+            android:background="@drawable/input_bg"
+            android:drawableLeft="@drawable/ic_baseline_security_24"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/RegEmail"
+            app:layout_constraintVertical_bias="0.068" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="207dp"
+            android:layout_height="51dp"
+            android:text="Healthcare"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.541"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.073" />
+
+        <EditText
+            android:id="@+id/RegUserName"
+            android:layout_width="353dp"
+            android:layout_height="55dp"
+            android:background="@drawable/input_bg"
+            android:drawableLeft="@drawable/ic_baseline_person_24"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Usename"
+            android:inputType="textPersonName"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintVertical_bias="0.029" />
+
+        <Button
+            android:id="@+id/Register"
+            android:layout_width="292dp"
+            android:layout_height="48dp"
+            android:background="@android:drawable/button_onoff_indicator_off"
+            android:text="Register"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.743" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="189dp"
+            android:layout_height="63dp"
+            android:hint="Registration"
+            android:textColor="@color/white"
+            android:textColorHint="#FFFFFFFF"
+            android:textSize="34sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.196" />
+
+        <TextView
+            android:id="@+id/ExistingUser"
+            android:layout_width="243dp"
+            android:layout_height="46dp"
+            android:text="Already have an account?"
+            android:textColor="@color/white"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Register"
+            app:layout_constraintVertical_bias="0.277" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+	
+	java
+	
+	
+	package com.example.healthcare;
+
+import static com.example.healthcare.R.layout.activity_register;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class RegisterActivity extends AppCompatActivity {
+    EditText edUsername, edEmail, edPassword, edConfirm;
+    Button btn;
+    TextView tv;
+    private String Confirm;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(activity_register);
+
+        edUsername = findViewById(R.id.RegUserName);
+        edPassword = findViewById(R.id.RegPassword);
+        edEmail = findViewById(R.id.RegEmail);
+        edConfirm = findViewById(R.id.RegConfirmPassword);
+        btn = findViewById(R.id.Register);
+        tv = findViewById(R.id.ExistingUser);
+
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(com.example.healthcare.RegisterActivity.this, LoginActivity.class));
+            }
+        });
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String username = edUsername.getText().toString();
+                String email = edEmail.getText().toString();
+                String password = edPassword.getText().toString();
+                String confirm = edConfirm.getText().toString();
+                Database db = new Database(getApplicationContext(), "healthcare", null, 1);
+                if (username.length() == 0 || email.length() == 0 || password.length() == 0 || confirm.length() == 0) {
+                    Toast.makeText(getApplicationContext(), "please fill all details ", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    if (password.compareTo(confirm) == 0) {
+                        if (isValid(password)) {
+                            db.register(username, email, password);
+                            Toast.makeText(getApplicationContext(), "Record Inserted", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Password must contain at least 8 characters,having letter,digit and special symbol", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Password and Confirm password didn't match", Toast.LENGTH_SHORT).show();
+                    }
+
+                }
+            }
+        });
+    }
+
+    public static boolean isValid(String Passwordhere) {
+        int f1 = 0, f2 = 0, f3 = 0;
+        if (Passwordhere.length() < 8) {
+            return false;
+        } else {
+            for (int p = 0; p < Passwordhere.length(); p++) {
+                if (Character.isLetter(Passwordhere.charAt(p))) {
+                    f1 = 1;
+                }
+            }
+            for (int r = 0; r < Passwordhere.length(); r++) {
+                if (Character.isDigit(Passwordhere.charAt(r))) {
+                    f2 = 1;
+                }
+            }
+            for (int s = 0; s < Passwordhere.length(); s++) {
+                char c = Passwordhere.charAt(s);
+                if (c >= 33 && c <= 46 || c == 64) {
+                    f3 = 1;
+                }
+            }
+            if (f1 == 1 && f2 == 1 && f3 == 1)
+                return true;
+            return false;
+        }
+    }
+
+}

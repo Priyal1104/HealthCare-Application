@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back1"
+    tools:context=".HealthArticlesActivity">
+
+
+    <TextView
+        android:id="@+id/textViewATName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HealthCare"
+        android:textColor="@color/purple_200"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.387"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.037" />
+
+
+    <TextView
+        android:id="@+id/textViewAT"
+        android:layout_width="171dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="616dp"
+        android:text="Health Articles"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.387"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewATName"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ListView
+        android:id="@+id/ListViewAT"
+        android:layout_width="353dp"
+        android:layout_height="497dp"
+        android:layout_margin="10dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.577" />
+
+    <Button
+        android:id="@+id/buttonATBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="Back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.439"
+        app:layout_constraintStart_toStartOf="parent">
+    </Button>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+java
+
+package com.example.healthcare;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class HealthArticlesActivity extends AppCompatActivity {
+    private  String[][] health_details=
+            {
+
+                    {"Walking Daily","","","","Click More Details"},
+                    {"Home care of COVID-19","","","","Click More Details"},
+                    {"Stop Smoking","","","","Click More Details"},
+                    {"Menstrual Cramps","","","","Click More Details"},
+                    {"Healthy Gut","","","","Click More Details"},
+
+            };
+    private int [] images = {
+            R.drawable.health1,
+            R.drawable.health2,
+            R.drawable.health3,
+            R.drawable.health4,
+            R.drawable.health5,
+    };
+    HashMap<String,String> item;
+    ArrayList list;
+    SimpleAdapter sa;
+    Button btnBack;
+    ListView lst;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_health_articles);
+        lst = findViewById(R.id.ListViewAT);
+        btnBack= findViewById(R.id.buttonATBack);
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HealthArticlesActivity.this,HomeActivity.class));
+            }
+        });
+          list = new ArrayList();
+        for (int i = 0; i < health_details.length; i++) {
+            item = new HashMap<String, String>();
+            item.put("line1", health_details[i][0]);
+            item.put("line2", health_details[i][1]);
+            item.put("line3", health_details[i][2]);
+            item.put("line4", health_details[i][3]);
+            item.put("line5", health_details[i][4]);
+            list.add(item);
+        }
+        sa = new SimpleAdapter(this, list,
+                R.layout.multi_lines,
+                new String[]{"line1", "line2", "line3", "line4", "line5"},
+                new int[]{R.id.line_a, R.id.line_b, R.id.line_c, R.id.line_d, R.id.line_e});
+        lst.setAdapter(sa);
+
+        lst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
+                Intent it = new Intent(HealthArticlesActivity.this,HealthArticlesDetailsActivity.class);
+                it.putExtra("text1",health_details[i][0]);
+                it.putExtra("text2",images[i]);
+                startActivity(it);
+
+
+            }
+        });
+
+    }
+}
